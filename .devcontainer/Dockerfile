@@ -12,8 +12,6 @@ RUN mkdir -p /root/.jupyter && \
     echo "c.NotebookApp.open_browser = False" >> /root/.jupyter/jupyter_notebook_config.py && \
     echo "c.NotebookApp.allow_root = True" >> /root/.jupyter/jupyter_notebook_config.py
 
-# Expose port for Jupyter
 EXPOSE 8888
 
-# Default command to launch Jupyter
 CMD ["julia", "-e", "using IJulia; notebook(detached=true)"]
